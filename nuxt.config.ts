@@ -1,5 +1,11 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt'],
+
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => tag.startsWith('shadcn-')
+    }
+  },
   
   shadcn: {
     /**
