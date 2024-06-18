@@ -2,11 +2,13 @@
   <Card class="p-0 card">
     <CardContent class="p-0 project-card">
       <a :href="linkUrl" target="_blank">
-        <img
-          :src="imageUrl"
-          alt="Project Image"
-          class="project-image"
-        />
+        <div class="image-container">
+          <img
+            :src="imageUrl"
+            alt="Project Image"
+            class="project-image"
+          />
+        </div>
       </a>
       <CardHeader>
         <CardTitle>{{ title }}</CardTitle>
@@ -15,12 +17,11 @@
       <p class="p-3">
         {{ description }}
       </p>
+
       <div class="badges pl-3">
         <Badge v-for="(badge, index) in badges" :key="index">{{ badge }}</Badge>
       </div>
-      <div class="buttons">
-        <Button v-for="(button, index) in buttons" :key="index" :href="button.url" target="_blank">{{ button.text }}</Button>
-      </div>
+
     </CardContent>
   </Card>
 </template>
@@ -47,24 +48,32 @@ const props = defineProps({
       type: Array,
       required: true
     },
-    buttons: {
-      type: Array,
-      required: false
-    }
   });
 </script>
 
 <style scoped>
+.image-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px 5px 0 0;
+}
+
 .project-image {
+  width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
-  border-radius: 5px 5px 0 0;
+  transition: transform 0.3s;
+}
+
+.project-image:hover {
+  transform: scale(1.05);
 }
 
 .card {
   margin-bottom: 20px;
   max-width: 700px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .project-card {
@@ -83,5 +92,6 @@ const props = defineProps({
 
 .buttons {
   margin-top: 20px;
+  margin-right: auto; 
 }
 </style>
