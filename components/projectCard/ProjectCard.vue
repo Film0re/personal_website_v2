@@ -18,10 +18,9 @@
         {{ description }}
       </p>
 
-      <div class="badges pl-3">
+      <div class="badges p-3">
         <Badge v-for="(badge, index) in badges" :key="index">{{ badge }}</Badge>
       </div>
-
     </CardContent>
   </Card>
 </template>
