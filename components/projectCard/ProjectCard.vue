@@ -3,11 +3,7 @@
     <CardContent class="p-0 project-card">
       <a :href="linkUrl" target="_blank">
         <div class="image-container">
-          <img
-            :src="imageUrl"
-            alt="Project Image"
-            class="project-image"
-          />
+          <img :src="imageUrl" alt="Project Image" class="project-image" />
         </div>
       </a>
       <CardHeader>
@@ -27,27 +23,27 @@
 
 <script setup>
 const props = defineProps({
-    imageUrl: {
-      type: String,
-      required: true
-    },
-    linkUrl: {
-      type: String,
-      required: true
-    },
-    title: {
-      type: String,
-      required: true
-    },
-    description: {
-      type: String,
-      required: true
-    },
-    badges: {
-      type: Array,
-      required: true
-    },
-  });
+  imageUrl: {
+    type: String,
+    required: true,
+  },
+  linkUrl: {
+    type: String,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  badges: {
+    type: Array,
+    required: true,
+  },
+});
 </script>
 
 <style scoped>
@@ -58,8 +54,7 @@ const props = defineProps({
 }
 
 .project-image {
-  width: 100%;
-  height: auto;
+  width: 700px;
   display: block;
   transition: transform 0.3s;
 }
@@ -91,6 +86,6 @@ const props = defineProps({
 
 .buttons {
   margin-top: 20px;
-  margin-right: auto; 
+  margin-right: auto;
 }
 </style>
