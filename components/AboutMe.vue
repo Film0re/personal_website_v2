@@ -4,7 +4,8 @@
       <NuxtImg
         :src="imageUrl"
         class="rounded-full h-32 w-32 object-cover mx-auto mb-4"
-        style="width: 120px; height: 120px"
+        height="128"
+        width="128"
       />
     </a>
     <p class="text-balance"><slot /></p>

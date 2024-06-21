@@ -11,7 +11,6 @@
           </CarouselItem>
         </CarouselContent>
 
-        <!-- <CarouselPagination /> -->
         <CarouselPrevious />
         <CarouselNext />
       </Carousel></div

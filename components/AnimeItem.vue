@@ -5,9 +5,11 @@
         :src="anime.coverImage.large"
         :alt="anime.title.english"
         class="rounded-lg w-full h-auto shadow"
+        width="200"
+        height="300"
       />
     </a>
-    <p class="mt-2 text-sm">{{ anime.title.english }}</p>
+    <p class="mt-2 text-sm" style="margin-top: auto;">{{ anime.title.english }}</p>
   </div>
 </template>
 

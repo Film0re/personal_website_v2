@@ -3,7 +3,9 @@
     <CardContent class="p-0 project-card">
       <a :href="linkUrl" target="_blank">
         <div class="image-container">
-          <img :src="imageUrl" alt="Project Image" class="project-image" />
+          <NuxtImg :src="imageUrl" alt="Project Image" class="project-image" 
+          height="360" width="700"
+          />
         </div>
       </a>
       <CardHeader>
@@ -54,7 +56,6 @@ const props = defineProps({
 }
 
 .project-image {
-  width: 700px;
   display: block;
   transition: transform 0.3s;
 }
