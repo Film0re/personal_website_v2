@@ -4,7 +4,7 @@
       <NuxtImg
         :src="anime.coverImage.large"
         :alt="anime.title.english"
-        class="rounded-lg h-auto shadow lg:w-auto w-72"
+        class="rounded-lg h-auto shadow lg:50 w-72"
         width="200"
         height="300"
       />
