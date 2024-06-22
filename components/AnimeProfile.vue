@@ -39,6 +39,14 @@ const favoriteAnime = computed(() => {
 });
 
 const currentlyWatching = computed(() => {
-  return userData.value.currentAnime[0].entries.map((entry) => entry.media);
+  return userData.value.currentAnime[0].entries.map((entry) => {
+    return {
+      ...entry.media,
+      score: entry.score,
+      progress: entry.progress,
+    };
+  });
 });
+
+console.log(userData.value.currentAnime[0]);
 </script>

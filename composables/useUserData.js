@@ -67,8 +67,11 @@ export async function useUserData(userName) {
         lists {
           name
           entries {
+          score
+          progress
             media {
               id
+              episodes
               title {
                 romaji
                 english
