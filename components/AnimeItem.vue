@@ -1,15 +1,15 @@
 <template>
-  <div class="">
+  <div class="flex flex-col items-center justify-between space-y-4">
     <a :href="'https://anilist.co/anime/' + anime.id">
       <NuxtImg
         :src="anime.coverImage.large"
         :alt="anime.title.english"
-        class="rounded-lg w-full h-auto shadow"
+        class="rounded-lg h-auto shadow lg:w-auto w-72"
         width="200"
         height="300"
       />
     </a>
-    <p class="mt-2 text-sm" style="margin-top: auto;">{{ anime.title.english }}</p>
+    <p class="mt-2 text-lg" style="margin-top: auto;">{{ anime.title.english }}</p>
   </div>
 </template>
 

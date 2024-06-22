@@ -13,7 +13,7 @@
       learn a bit more about Tailwind.
     </AboutMe>
 
-    <AnimeProfile userName="Film0re" style="width: 1200px" />
+    <AnimeProfile userName="Film0re" class="max-w-sm lg:max-w-7xl" />
     <ProjectDisplay title="Projects" />
   </div>
 </template>
