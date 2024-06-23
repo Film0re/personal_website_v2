@@ -1,5 +1,3 @@
-// composables/useUserData.js
-
 export async function useUserData(userName) {
   const query = `
     query GetUserInfo($userName: String!) {
@@ -63,12 +61,12 @@ export async function useUserData(userName) {
           updatedAt
         }
       }
-      MediaListCollection(userName: $userName, type: ANIME, status: CURRENT) {
+      MediaListCollection(userName: $userName, type: ANIME) {
         lists {
           name
           entries {
-          score
-          progress
+            score
+            progress
             media {
               id
               episodes
@@ -104,7 +102,42 @@ export async function useUserData(userName) {
     }
 
     const { data } = await response.json();
-    return { user: data.User, currentAnime: data.MediaListCollection.lists };
+    const user = data.User;
+    const currentAnime = data.MediaListCollection.lists;
+
+    // Create a map of media ID to score for quick lookup
+    const mediaScoreMap = {};
+    currentAnime.forEach(list => {
+      list.entries.forEach(entry => {
+        mediaScoreMap[entry.media.id] = entry.score;
+      });
+    });
+
+    // Add score to favorite anime nodes
+    user.favourites.anime.edges = user.favourites.anime.edges.map(edge => {
+      const anime = edge.node;
+      const score = mediaScoreMap[anime.id] || null;
+      return {
+        ...edge,
+        node: {
+          ...anime,
+          score
+        }
+      };
+    });
+
+    // Process favorite anime
+    const favoriteAnime = user.favourites.anime.edges.map(edge => edge.node);
+
+    // Process currently watching anime
+    const currentlyWatchingList = currentAnime.find(list => list.name === 'Watching');
+    const currentlyWatching = currentlyWatchingList ? currentlyWatchingList.entries.map(entry => ({
+      ...entry.media,
+      score: entry.score,
+      progress: entry.progress,
+    })) : [];
+
+    return { user, favoriteAnime, currentlyWatching };
   } catch (error) {
     console.error('Error fetching user data:', error);
     return null;

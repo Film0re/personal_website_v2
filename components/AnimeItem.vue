@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-between space-y-4">
+  <div class="flex flex-col items-center justify-between space-y-4 ">
     <a :href="'https://anilist.co/anime/' + anime.id">
       <NuxtImg
         :src="anime.coverImage.large"
@@ -10,11 +10,13 @@
       />
     </a>
     <br />
-    <p class="mt-2 text-lg" style="margin-top: auto">
+    <p class="mt-2 text-lg text-center" style="margin-top: auto">
       {{ anime.title.english }}
     </p>
-    <p v-if="anime.progress" class="text-sm text-gray-500">
-      Progress: {{ anime.progress }} / {{ anime.episodes }}
+    <p class="text-sm text-gray-500">
+      <span v-if="anime.progress" class="text-sm text-gray-500">
+        Progress: {{ anime.progress }} / {{ anime.episodes }}
+      </span>
       <span v-if="anime.score" class="text-sm text-gray-500">
         &middot; Score: {{ anime.score }}
       </span>
