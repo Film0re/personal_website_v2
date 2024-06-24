@@ -3,8 +3,12 @@
     <CardContent class="p-0 project-card">
       <a :href="linkUrl" target="_blank">
         <div class="image-container">
-          <NuxtImg :src="imageUrl" alt="Project Image" class="project-image" 
-          height="360" width="700"
+          <NuxtImg
+            :src="imageUrl"
+            alt="Project Image"
+            class="project-image"
+            height="360"
+            width="700"
           />
         </div>
       </a>
@@ -16,8 +20,8 @@
         {{ description }}
       </p>
 
-      <div class="badges p-3">
-        <Badge v-for="(badge, index) in badges" :key="index">{{ badge }}</Badge>
+      <div class="p-3 flex flex-row justify-center align-center">
+        <Badge class="mr-1" v-for="(badge, index) in badges" :key="index">{{ badge }}</Badge>
       </div>
     </CardContent>
   </Card>
