@@ -2,9 +2,7 @@
   <div class="p-8 w-full">
     <h2 class="text-center text-3xl font-bold mb-8">{{ title }}</h2>
     <div class="flex flex-wrap justify-center">
-      <!-- Loop through projects and display each one -->
       <div>
-        <!-- Assuming you have a 'Project' component to display each project -->
         <ProjectCard
           imageUrl="/img/lol.png"
           linkUrl="https://uofm.lol/"
@@ -30,7 +28,3 @@ const props = defineProps({
   },
 });
 </script>
-
-<style scoped>
-/* No custom scoped styles needed since Tailwind CSS classes are used */
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="" v-if="user">
+  <div v-if="user">
     <div>
       <div class="mt-8">
         <h2 class="text-center text-3xl font-bold mb-4">Favorites</h2>
@@ -15,9 +15,6 @@
 </template>
 
 <script setup>
-import { useUserData } from "~/composables/useUserData";
-import AnimeList from "./AnimeList.vue";
-
 const { data: userData } = await useAsyncData("anilist", async () => {
   return await useUserData("Film0re");
 });
@@ -25,6 +22,4 @@ const { data: userData } = await useAsyncData("anilist", async () => {
 const user = computed(() => userData.value?.user);
 const favoriteAnime = computed(() => userData.value?.favoriteAnime);
 const currentlyWatching = computed(() => userData.value?.currentlyWatching);
-
-
 </script>
