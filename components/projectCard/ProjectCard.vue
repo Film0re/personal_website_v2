@@ -6,7 +6,7 @@
           <NuxtImg
             :src="imageUrl"
             alt="Project Image"
-            class="project-image"
+            class="project-image shadow-sm"
             height="360"
             width="700"
           />
