@@ -13,11 +13,7 @@
 
         <ProjectCard
           imageUrl="/img/aram.png"
-<<<<<<< HEAD
           linkUrl="https://aram.dowdle.dev"
-=======
-          linkUrl="https//aram.dowdle.dev"
->>>>>>> 1a5145895e4d7e20f4a97df247ce91679a39074a
           title="Aram Stats"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
           :badges="['Vue', 'Supabase', 'PrimeVue']"
