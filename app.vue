@@ -7,14 +7,15 @@
       flex-direction: column;
     "
   >
-    <AboutMe imageUrl="/img/pfp.png">
+    <AboutMe imageUrl="/img/profile_picture.png">
       Welcome to my website, I am a software engineer who loves anime and
       programming. I am currently working on this website as a side project to
-      learn a bit more about Tailwind.
+      learn a bit more about Tailwind and GraphQL.
     </AboutMe>
 
     <AnimeProfile userName="Film0re" class="max-w-sm lg:max-w-7xl" />
     <ProjectDisplay title="Projects" />
+    <Footer />
   </div>
 </template>
 <script setup>

@@ -4,9 +4,8 @@
       <NuxtImg
         :src="anime.coverImage.large"
         :alt="anime.title.english"
-        class="rounded-lg shadow w-60 h-auto object-cover"
-        width="200"
-        height="300"
+        class="rounded-lg shadow w-52 h-72 object-cover"
+        height="288"
       />
     </a>
     <br />

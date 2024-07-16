@@ -1,6 +1,6 @@
 <template>
   <Card class="p-0 card">
-    <CardContent class="p-0 project-card">
+    <CardContent class="p-0 project-card shadow">
       <a :href="linkUrl" target="_blank">
         <div class="image-container">
           <NuxtImg
@@ -21,7 +21,9 @@
       </p>
 
       <div class="p-3 flex flex-row justify-center align-center">
-        <Badge class="mr-1" v-for="(badge, index) in badges" :key="index">{{ badge }}</Badge>
+        <Badge class="mr-1" v-for="(badge, index) in badges" :key="index">{{
+          badge
+        }}</Badge>
       </div>
     </CardContent>
   </Card>
