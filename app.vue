@@ -37,6 +37,7 @@ useHead({
       defer: true,
     },
   ],
+  title: "Daniel Dowdle",
 });
 </script>
 

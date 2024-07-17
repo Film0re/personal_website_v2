@@ -6,6 +6,7 @@
         class="rounded-full h-32 w-32 object-cover mx-auto mb-4"
         height="128"
         width="128"
+        alt="MaoMao from Apothecary Diaries holding a wooden scroll"
       />
     </a>
     <p class="text-balance"><slot /></p>
