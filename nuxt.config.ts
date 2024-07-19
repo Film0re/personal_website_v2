@@ -6,7 +6,7 @@ export default defineNuxtConfig({
       isCustomElement: (tag) => tag.startsWith('shadcn-')
     }
   },
-  
+
   shadcn: {
     /**
      * Prefix for all the imported component
@@ -22,6 +22,7 @@ export default defineNuxtConfig({
   image: {
     format: ['webp'],
     domains: ['anilist.co']
-  }
+  },
 
+  compatibilityDate: '2024-07-16'
 })
