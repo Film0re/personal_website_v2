@@ -6,18 +6,34 @@
         imageUrl="/img/lol.png"
         linkUrl="https://uofm.lol/"
         title="League of Legend's Intramurals Website"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        :badges="['Nuxt', 'Postgres']"
-      >
+        :badges="['Nuxt', 'PostgreSQL', 'C#']"
+        >Little project I created over 2023 winter break in order to automate
+        scorekeeping for our intramural league. This project utilized
+        <a class="underline" href="https://github.com/fraxiinus/roflxd.cs">
+          roflxd.cs</a
+        >
+        by
+        <a class="underline" href="https://github.com/fraxiinus">Fraxinus' </a>
+        to parse data from replay files which were then used to automatically
+        update the standings. This was the first time I setup the schema to a
+        database all on my own and I made some mistakes but overall I learned a
+        lot and have fun B)
       </ProjectCard>
 
       <ProjectCard
         imageUrl="/img/aram.png"
         linkUrl="https://aram.dowdle.dev"
         title="Aram Stats"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        :badges="['Vue', 'Supabase', 'PrimeVue']"
-      >
+        :badges="['Vue', 'Supabase', 'PrimeVue', 'Riot Games API']"
+        >Aram is one of my favorite game modes to just relax on and so I was
+        quite sad when <a href="https://aram.academy/">Aram Academy</a> went
+        down. I like being able to see my stats over hundreds of games but none
+        of the other sites had my old data and would only load the past 20 games
+        or so. In order to fix this problem I created
+        <a class="underline" href="https://aram.dowdle.dev/">Aram Stats</a>. I
+        was able to go back ~500 games and create an auto-update script to
+        always keep my stats up to date! The only downside is I can also see my
+        bad stats :(
       </ProjectCard>
     </div>
   </div>

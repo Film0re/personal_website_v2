@@ -10,7 +10,7 @@
     <AboutMe imageUrl="/img/profile_picture.png">
       Welcome to my website, I am a software engineer who loves anime and
       programming. I am currently working on this website as a side project to
-      learn a bit more about Tailwind and GraphQL.
+      learn a bit more about Tailwind, GraphQL and shadcn.
     </AboutMe>
 
     <AnimeProfile userName="Film0re" class="max-w-sm lg:max-w-7xl" />

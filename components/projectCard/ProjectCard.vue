@@ -17,7 +17,7 @@
       </CardHeader>
 
       <p class="p-3">
-        {{ description }}
+        <slot />
       </p>
 
       <div class="p-3 flex flex-row justify-center align-center">
