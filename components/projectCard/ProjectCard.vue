@@ -43,10 +43,6 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  description: {
-    type: String,
-    required: true,
-  },
   badges: {
     type: Array,
     required: true,

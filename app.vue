@@ -37,6 +37,9 @@ useHead({
       defer: true,
     },
   ],
+  meta: [
+    { name: "description", content: "Portfolio website for Daniel Dowdle" },
+  ],
   title: "Daniel Dowdle",
 });
 </script>

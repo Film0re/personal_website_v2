@@ -3,6 +3,7 @@
     <a href="https://anilist.co/user/Film0re" target="_blank">
       <NuxtImg
         :src="imageUrl"
+        format="webp"
         class="rounded-full h-32 w-32 object-cover mx-auto mb-4"
         height="128"
         width="128"

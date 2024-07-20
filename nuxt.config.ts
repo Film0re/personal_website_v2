@@ -21,7 +21,7 @@ export default defineNuxtConfig({
 
   image: {
     format: ['webp'],
-    domains: ['anilist.co']
+    domains: ['anilist.co', 's4.anilist.co']
   },
 
   compatibilityDate: '2024-07-16'
