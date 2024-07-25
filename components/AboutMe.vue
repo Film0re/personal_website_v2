@@ -1,10 +1,10 @@
 <template>
-  <div class="about-me-container">
+  <div class="about-me-container mx-0 my-2 max-w-xs text-center">
     <a href="https://anilist.co/user/Film0re" target="_blank">
       <NuxtImg
         :src="imageUrl"
         format="webp"
-        class="rounded-full h-32 w-32 object-cover mx-auto mb-4"
+        class="mx-auto mb-4 h-32 w-32 rounded-full object-cover"
         height="128"
         width="128"
         alt="MaoMao from Apothecary Diaries holding a wooden scroll"
@@ -22,12 +22,3 @@ const props = defineProps({
   },
 });
 </script>
-
-<style scoped>
-.about-me-container {
-  max-width: 320px;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 2rem;
-}
-</style>

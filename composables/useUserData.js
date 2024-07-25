@@ -140,6 +140,10 @@ export async function useUserData(userName) {
     return { user, favoriteAnime, currentlyWatching };
   } catch (error) {
     console.error('Error fetching user data:', error);
-    return null;
+    return {
+      user: null,
+      favoriteAnime: [],
+      currentlyWatching: [],
+    }
   }
 }

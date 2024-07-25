@@ -1,12 +1,5 @@
 <template>
-  <div
-    style="
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    "
-  >
+  <div class="flex flex-col items-center justify-center">
     <AboutMe imageUrl="/img/profile_picture.png">
       Welcome to my website, I am a software engineer who loves anime and
       programming. I am currently working on this website as a side project to
@@ -43,9 +36,3 @@ useHead({
   title: "Daniel Dowdle",
 });
 </script>
-
-<style scoped>
-.user-profile {
-  padding: 20px;
-}
-</style>
