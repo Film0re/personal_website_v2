@@ -17,7 +17,7 @@
         to parse data from replay files which were then used to automatically
         update the standings. This was the first time I setup the schema to a
         database all on my own and I made some mistakes but overall I learned a
-        lot and have fun B)
+        lot and had fun B)
       </ProjectCard>
 
       <ProjectCard
