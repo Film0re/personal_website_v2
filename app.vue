@@ -1,13 +1,13 @@
 <template>
-  <div class="flex flex-col items-center justify-center">
+  <div class="flex flex-col center justify-center items-center">
+    <Header></Header>
     <AboutMe imageUrl="/img/profile_picture.png">
-      Welcome to my website, I am a software engineer who loves anime and
-      programming. I am currently working on this website as a side project to
-      learn a bit more about Tailwind, GraphQL and shadcn.
-    </AboutMe>
+      Hello I am currently a full stack developer learning the ropes. In my
+      offtime I enjoy working with vue and playing counterstrike and league
+      along with watching anime. :3</AboutMe
+    >
 
-    <AnimeProfile userName="Film0re" class="max-w-sm lg:max-w-7xl" />
-    <ProjectDisplay title="Projects" />
+    <NuxtPage></NuxtPage>
     <Footer />
   </div>
 </template>
