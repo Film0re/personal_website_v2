@@ -12,6 +12,10 @@
   </div>
 </template>
 <script setup>
+useSeoMeta({
+  ogImage: ".img/profile_picture.png",
+});
+
 useHead({
   htmlAttrs: {
     lang: "en",
@@ -20,7 +24,7 @@ useHead({
     {
       rel: "icon",
       type: "image/png",
-      href: "/favicon.ico",
+      href: "/konata.ico",
     },
   ],
   script: [
