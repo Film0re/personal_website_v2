@@ -460,7 +460,7 @@ const {
   getRecentGames,
   getCSStatValue,
   formatPlaytime,
-} = useSteam();
+} = useSteam("76561198221547276");
 
 const profile = ref<SteamProfile | null>(null);
 const csStats = ref<CSStats | null>(null);
@@ -511,7 +511,7 @@ onMounted(async () => {
   try {
     const [profileData, csStatsData, recentGamesData] = await Promise.all([
       getSteamProfile(),
-      getCSStats(),
+      getCSStats(""),
       getRecentGames(),
     ]);
 

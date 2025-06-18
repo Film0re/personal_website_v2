@@ -1,8 +1,15 @@
-// server/api/steam/recent-games.get.ts
+// server/api/steam/recent-games/[steamId].get.ts
 export default defineEventHandler(async (event) => {
 	const config = useRuntimeConfig()
-	const steamId = config.steamId
 	const apiKey = config.steamApiKey
+	const { steamId } = event.context.params || {}
+
+	if (!steamId) {
+		throw createError({
+			statusCode: 400,
+			statusMessage: 'Missing steamId in URL'
+		})
+	}
 
 	try {
 		const response = await $fetch(`https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/`, {
@@ -21,3 +28,4 @@ export default defineEventHandler(async (event) => {
 		})
 	}
 })
+

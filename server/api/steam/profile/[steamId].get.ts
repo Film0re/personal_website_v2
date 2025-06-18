@@ -1,8 +1,15 @@
-// server/api/steam/profile.get.ts
+// server/api/steam/profile/[steamId].get.ts
 export default defineEventHandler(async (event) => {
 	const config = useRuntimeConfig()
-	const steamId = config.steamId
 	const apiKey = config.steamApiKey
+	const { steamId } = event.context.params || {}
+
+	if (!steamId) {
+		throw createError({
+			statusCode: 400,
+			statusMessage: 'Missing steamId in URL'
+		})
+	}
 
 	try {
 		const response = await $fetch(`https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/`, {
@@ -12,7 +19,6 @@ export default defineEventHandler(async (event) => {
 			}
 		})
 
-
 		return response.response.players[0]
 	} catch (error) {
 		throw createError({
@@ -21,3 +27,4 @@ export default defineEventHandler(async (event) => {
 		})
 	}
 })
+

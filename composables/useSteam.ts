@@ -1,19 +1,28 @@
 // composables/useSteam.ts
 import type { SteamProfile, CSStat, CSStats, RecentGames } from '../types/steam'
 
-export const useSteam = () => {
-  const getSteamProfile = async (): Promise<SteamProfile> => {
-    const data = await $fetch('/api/steam/profile')
+export const useSteam = (defaultSteamId?: string) => {
+  const resolveSteamId = (override?: string): string => {
+    if (override) return override
+    if (defaultSteamId) return defaultSteamId
+    throw new Error('Steam ID is required but not provided.')
+  }
+
+  const getSteamProfile = async (steamIdOverride?: string): Promise<SteamProfile> => {
+    const steamId = resolveSteamId(steamIdOverride)
+    const data = await $fetch(`/api/steam/profile/${steamId}`)
     return data
   }
 
-  const getCSStats = async (): Promise<CSStats> => {
-    const data = await $fetch('/api/steam/cs-stats')
+  const getCSStats = async (steamIdOverride?: string): Promise<CSStats> => {
+    const steamId = resolveSteamId(steamIdOverride)
+    const data = await $fetch(`/api/steam/cs-stats/${steamId}`)
     return data
   }
 
-  const getRecentGames = async (): Promise<RecentGames> => {
-    const data = await $fetch('/api/steam/recent-games')
+  const getRecentGames = async (steamIdOverride?: string): Promise<RecentGames> => {
+    const steamId = resolveSteamId(steamIdOverride)
+    const data = await $fetch(`/api/steam/recent-games/${steamId}`)
     return data
   }
 
@@ -23,17 +32,17 @@ export const useSteam = () => {
   }
 
   const formatPlaytime = (seconds: number): string => {
-    const correctionFactor = 1.59;
-    const correctedSeconds = seconds * correctionFactor;
-    const totalMinutes = Math.floor(correctedSeconds / 60);
-    const hours = Math.floor(totalMinutes / 60);
+    const correctionFactor = 1.59
+    const correctedSeconds = seconds * correctionFactor
+    const totalMinutes = Math.floor(correctedSeconds / 60)
+    const hours = Math.floor(totalMinutes / 60)
 
-    if (hours < 1) return `${totalMinutes}m`;
-    if (hours < 24) return `${hours}h ${totalMinutes % 60}m`;
+    if (hours < 1) return `${totalMinutes}m`
+    if (hours < 24) return `${hours}h ${totalMinutes % 60}m`
 
-    const days = Math.floor(hours / 24);
-    return `${days}d ${hours % 24}h`;
-  };
+    const days = Math.floor(hours / 24)
+    return `${days}d ${hours % 24}h`
+  }
 
   return {
     getSteamProfile,
@@ -43,3 +52,4 @@ export const useSteam = () => {
     formatPlaytime
   }
 }
+

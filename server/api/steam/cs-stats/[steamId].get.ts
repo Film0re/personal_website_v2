@@ -1,9 +1,17 @@
-// server/api/steam/cs-stats.get.ts
+// server/api/steam/cs-stats/[steamId].get.ts
 export default defineEventHandler(async (event) => {
 	const config = useRuntimeConfig()
-	const steamId = config.steamId
 	const apiKey = config.steamApiKey
-	const csgoAppId = '730' // CS2/CSGO app ID
+	const csgoAppId = '730'
+
+	const { steamId } = event.context.params || {}
+
+	if (!steamId) {
+		throw createError({
+			statusCode: 400,
+			statusMessage: 'Missing steamId in URL'
+		})
+	}
 
 	try {
 		const response = await $fetch(`https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/`, {
@@ -13,8 +21,6 @@ export default defineEventHandler(async (event) => {
 				steamid: steamId
 			}
 		})
-
-		console.log(JSON.stringify(response.playerstats.stats, null, 2))
 
 		return response.playerstats
 	} catch (error) {
