@@ -22,13 +22,18 @@ export const useSteam = () => {
     return stat ? stat.value : 0
   }
 
-  const formatPlaytime = (minutes: number): string => {
-    const hours = Math.floor(minutes / 60)
-    if (hours < 1) return `${minutes}m`
-    if (hours < 24) return `${hours}h ${minutes % 60}m`
-    const days = Math.floor(hours / 24)
-    return `${days}d ${hours % 24}h`
-  }
+  const formatPlaytime = (seconds: number): string => {
+    const correctionFactor = 1.59;
+    const correctedSeconds = seconds * correctionFactor;
+    const totalMinutes = Math.floor(correctedSeconds / 60);
+    const hours = Math.floor(totalMinutes / 60);
+
+    if (hours < 1) return `${totalMinutes}m`;
+    if (hours < 24) return `${hours}h ${totalMinutes % 60}m`;
+
+    const days = Math.floor(hours / 24);
+    return `${days}d ${hours % 24}h`;
+  };
 
   return {
     getSteamProfile,
