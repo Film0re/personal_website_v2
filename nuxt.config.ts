@@ -2,7 +2,6 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', "@nuxt/image"],
   runtimeConfig: {
     steamApiKey: process.env.STEAM_API_KEY,
-    steamId: process.env.STEAM_ID
   },
 
   vue: {

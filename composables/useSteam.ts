@@ -1,4 +1,3 @@
-// composables/useSteam.ts
 import type { SteamProfile, CSStat, CSStats, RecentGames } from '../types/steam'
 
 export const useSteam = (defaultSteamId?: string) => {
@@ -44,6 +43,7 @@ export const useSteam = (defaultSteamId?: string) => {
     return `${days}d ${hours % 24}h`
   }
 
+  // Return functions directly without wrapping in reactive state
   return {
     getSteamProfile,
     getCSStats,
