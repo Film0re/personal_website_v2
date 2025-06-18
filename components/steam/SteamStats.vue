@@ -454,13 +454,17 @@
 import { ref } from "vue";
 import type { SteamProfile, CSStats, RecentGames } from "~/types/steam";
 
+const props = defineProps<{
+  steamId: string;
+}>();
+
 const {
   getSteamProfile,
   getCSStats,
   getRecentGames,
   getCSStatValue,
   formatPlaytime,
-} = useSteam("76561198221547276");
+} = useSteam(props.steamId);
 
 const profile = ref<SteamProfile | null>(null);
 const csStats = ref<CSStats | null>(null);
