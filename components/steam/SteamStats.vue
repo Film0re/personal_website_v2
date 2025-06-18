@@ -1,5 +1,6 @@
 <template>
   <div class="max-w-6xl mx-auto p-6">
+    <!-- break this unholy monster that claude created into more maintainable pieces -->
     <!-- Loading State -->
     <div v-if="pending" class="flex items-center justify-center min-h-96">
       <div class="flex items-center space-x-4">
@@ -515,13 +516,9 @@ onMounted(async () => {
   try {
     const [profileData, csStatsData, recentGamesData] = await Promise.all([
       getSteamProfile(),
-      getCSStats(""),
+      getCSStats(),
       getRecentGames(),
     ]);
-
-    console.log(csStatsData);
-    console.log(profileData);
-    console.log(recentGamesData);
 
     profile.value = profileData;
     csStats.value = csStatsData;
