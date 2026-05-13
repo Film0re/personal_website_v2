@@ -20,21 +20,21 @@
         lot and had fun B)
       </ProjectCard>
 
-      <ProjectCard
-        imageUrl="/img/aram.png"
-        linkUrl="https://aram.dowdle.dev"
-        title="Aram Stats"
-        :badges="['Vue', 'Supabase', 'PrimeVue', 'Riot Games API']"
-        >Aram is one of my favorite game modes to just relax on and so I was
-        quite sad when <a href="https://aram.academy/">Aram Academy</a> went
-        down. I like being able to see my stats over hundreds of games but none
-        of the other sites had my old data and would only load the past 20 games
-        or so. In order to fix this problem I created
-        <a class="underline" href="https://aram.dowdle.dev/">Aram Stats</a>. I
-        was able to go back ~500 games and create an auto-update script to
-        always keep my stats up to date! The only downside is I can also see my
-        bad stats :(
-      </ProjectCard>
+      <!-- <ProjectCard -->
+      <!--   imageUrl="/img/aram.png" -->
+      <!--   linkUrl="https://aram.dowdle.dev" -->
+      <!--   title="Aram Stats" -->
+      <!--   :badges="['Vue', 'Supabase', 'PrimeVue', 'Riot Games API']" -->
+      <!--   >Aram is one of my favorite game modes to just relax on and so I was -->
+      <!--   quite sad when <a href="https://aram.academy/">Aram Academy</a> went -->
+      <!--   down. I like being able to see my stats over hundreds of games but none -->
+      <!--   of the other sites had my old data and would only load the past 20 games -->
+      <!--   or so. In order to fix this problem I created -->
+      <!--   <a class="underline" href="https://aram.dowdle.dev/">Aram Stats</a>. I -->
+      <!--   was able to go back ~500 games and create an auto-update script to -->
+      <!--   always keep my stats up to date! The only downside is I can also see my -->
+      <!--   bad stats :( -->
+      <!-- </ProjectCard> -->
     </div>
   </div>
 </template>

@@ -4,14 +4,6 @@
       <h1 class="text-xl font-semibold">
         <NuxtLink to="/" class="hover:text-gray-300">Home</NuxtLink>
       </h1>
-      <nav class="flex space-x-4">
-        <NuxtLink
-          to="/cs-stats"
-          class="hover:text-gray-300 transition-colors duration-200"
-        >
-          CS Stats
-        </NuxtLink>
-      </nav>
     </div>
   </header>
 </template>
