@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', "@nuxt/image"],
+
   runtimeConfig: {
     steamApiKey: process.env.STEAM_API_KEY,
   },
@@ -22,10 +23,23 @@ export default defineNuxtConfig({
     componentDir: './components/ui'
   },
 
+  components: [
+    {
+      path: './components',
+      extensions: ['vue']
+    }
+  ],
+
   image: {
     format: ['webp'],
     domains: ['anilist.co', 's4.anilist.co']
   },
 
-  compatibilityDate: '2024-07-16'
+  compatibilityDate: '2024-07-16',
+
+  devtools: {
+    timeline: {
+      enabled: true
+    }
+  }
 })
