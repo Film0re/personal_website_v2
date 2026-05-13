@@ -89,10 +89,10 @@ export async function useUserData(userName) {
   const variables = { userName };
 
   try {
-    const response = await fetch('https://graphql.anilist.co', {
-      method: 'POST',
+    const response = await fetch("https://graphql.anilist.co", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ query, variables }),
     });
@@ -107,43 +107,45 @@ export async function useUserData(userName) {
 
     // Create a map of media ID to score for quick lookup
     const mediaScoreMap = {};
-    currentAnime.forEach(list => {
-      list.entries.forEach(entry => {
+    currentAnime.forEach((list) => {
+      list.entries.forEach((entry) => {
         mediaScoreMap[entry.media.id] = entry.score;
       });
     });
 
     // Add score to favorite anime nodes
-    user.favourites.anime.edges = user.favourites.anime.edges.map(edge => {
+    user.favourites.anime.edges = user.favourites.anime.edges.map((edge) => {
       const anime = edge.node;
       const score = mediaScoreMap[anime.id] || null;
       return {
         ...edge,
         node: {
           ...anime,
-          score
-        }
+          score,
+        },
       };
     });
 
     // Process favorite anime
-    const favoriteAnime = user.favourites.anime.edges.map(edge => edge.node);
+    const favoriteAnime = user.favourites.anime.edges.map((edge) => edge.node);
 
     // Process currently watching anime
-    const currentlyWatchingList = currentAnime.find(list => list.name === 'Watching');
-    const currentlyWatching = currentlyWatchingList ? currentlyWatchingList.entries.map(entry => ({
-      ...entry.media,
-      score: entry.score,
-      progress: entry.progress,
-    })) : [];
+    const currentlyWatchingList = currentAnime.find((list) => list.name === "Watching");
+    const currentlyWatching = currentlyWatchingList
+      ? currentlyWatchingList.entries.map((entry) => ({
+          ...entry.media,
+          score: entry.score,
+          progress: entry.progress,
+        }))
+      : [];
 
     return { user, favoriteAnime, currentlyWatching };
   } catch (error) {
-    console.error('Error fetching user data:', error);
+    console.error("Error fetching user data:", error);
     return {
       user: null,
       favoriteAnime: [],
       currentlyWatching: [],
-    }
+    };
   }
 }

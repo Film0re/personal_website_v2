@@ -1,5 +1,13 @@
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', "@nuxt/image"],
+  modules: ["@nuxtjs/tailwindcss", "shadcn-nuxt", "@nuxt/image", "@nuxtjs/apollo"],
+
+  apollo: {
+    clients: {
+      default: {
+        httpEndpoint: "https://spacex-production.up.railway.app",
+      },
+    },
+  },
 
   runtimeConfig: {
     steamApiKey: process.env.STEAM_API_KEY,
@@ -7,39 +15,39 @@ export default defineNuxtConfig({
 
   vue: {
     compilerOptions: {
-      isCustomElement: (tag) => tag.startsWith('shadcn-')
-    }
+      isCustomElement: (tag) => tag.startsWith("shadcn-"),
+    },
   },
 
   shadcn: {
     /**
      * Prefix for all the imported component
      */
-    prefix: '',
+    prefix: "",
     /**
      * Directory that the component lives in.
      * @default "./components/ui"
      */
-    componentDir: './components/ui'
+    componentDir: "./components/ui",
   },
 
   components: [
     {
-      path: './components',
-      extensions: ['vue']
-    }
+      path: "./components",
+      extensions: ["vue"],
+    },
   ],
 
   image: {
-    format: ['webp'],
-    domains: ['anilist.co', 's4.anilist.co']
+    format: ["webp"],
+    domains: ["anilist.co", "s4.anilist.co"],
   },
 
-  compatibilityDate: '2024-07-16',
+  compatibilityDate: "2024-07-16",
 
   devtools: {
     timeline: {
-      enabled: true
-    }
-  }
-})
+      enabled: true,
+    },
+  },
+});

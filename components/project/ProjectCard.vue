@@ -21,9 +21,7 @@
       </p>
 
       <div class="p-3 flex flex-row justify-center align-center">
-        <Badge class="mr-1" v-for="(badge, index) in badges" :key="index">{{
-          badge
-        }}</Badge>
+        <Badge class="mr-1" v-for="(badge, index) in badges" :key="index">{{ badge }}</Badge>
       </div>
     </CardContent>
   </Card>
