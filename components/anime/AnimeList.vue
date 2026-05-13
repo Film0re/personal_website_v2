@@ -3,11 +3,7 @@
     <div>
       <Carousel class="relative w-full max-w-m">
         <CarouselContent>
-          <CarouselItem
-            v-for="anime in animeArray"
-            :key="anime.id"
-            class="lg:basis-1/5"
-          >
+          <CarouselItem v-for="anime in animeArray" :key="anime.id" class="lg:basis-1/5">
             <AnimeItem :anime="anime" />
           </CarouselItem>
         </CarouselContent>

@@ -2,9 +2,8 @@
   <div class="flex flex-col center justify-center items-center">
     <Header></Header>
     <AboutMe imageUrl="/img/profile_picture.png">
-      Hello I am currently a full stack developer learning the ropes. In my
-      offtime I enjoy working with vue and playing counterstrike and league
-      along with watching anime. :3</AboutMe
+      Hello I am currently a full stack developer learning the ropes. In my offtime I enjoy working
+      with vue and playing counterstrike and league along with watching anime. :3</AboutMe
     >
 
     <NuxtPage></NuxtPage>
@@ -34,9 +33,7 @@ useHead({
       defer: true,
     },
   ],
-  meta: [
-    { name: "description", content: "Portfolio website for Daniel Dowdle" },
-  ],
+  meta: [{ name: "description", content: "Portfolio website for Daniel Dowdle" }],
   title: "Daniel Dowdle",
 });
 </script>
