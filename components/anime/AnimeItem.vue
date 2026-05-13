@@ -15,7 +15,7 @@
     </p>
     <p class="text-sm text-gray-500">
       <span v-if="anime.progress" class="text-sm text-gray-500">
-        Progress: {{ anime.progress }} / {{ anime.episodes }}
+        Progress: {{ anime.progress }} / {{ anime?.episodes ?? "?" }}
       </span>
       <span v-if="anime.score && anime.progress" class="text-sm text-gray-500">
         &middot;
