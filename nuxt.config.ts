@@ -1,5 +1,20 @@
 export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "shadcn-nuxt", "@nuxt/image", "@nuxtjs/apollo"],
+  vite: {
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        '@vueuse/core',
+        'class-variance-authority',
+        'clsx',
+        'embla-carousel-vue',
+        'lucide-vue-next',
+        'reka-ui',
+        'tailwind-merge',
+      ]
+    }
+  },
 
   apollo: {
     clients: {
