@@ -16,16 +16,12 @@ export default defineNuxtConfig({
     }
   },
 
-  apollo: {
+   apollo: {
     clients: {
       default: {
-        httpEndpoint: "https://spacex-production.up.railway.app",
-      },
+        httpEndpoint: 'https://graphql.anilist.co'
+      }
     },
-  },
-
-  runtimeConfig: {
-    steamApiKey: process.env.STEAM_API_KEY,
   },
 
   vue: {

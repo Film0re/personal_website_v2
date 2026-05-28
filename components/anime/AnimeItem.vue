@@ -3,7 +3,7 @@
     <a :href="'https://anilist.co/anime/' + anime.id">
       <NuxtImg
         :src="anime.coverImage.large"
-        :alt="anime.title.english"
+        :alt="anime.title.english ?? anime.title.romaji"
         format="webp"
         class="rounded-lg shadow w-52 h-72 object-cover"
         height="288"
@@ -11,7 +11,7 @@
     </a>
     <br />
     <p class="mt-2 text-lg text-center" style="margin-top: auto">
-      {{ anime.title.english }}
+      {{ anime.title.english  ?? anime.title.romaji}}
     </p>
     <p class="text-sm text-gray-500">
       <span v-if="anime.progress" class="text-sm text-gray-500">
