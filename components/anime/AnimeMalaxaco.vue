@@ -1,6 +1,6 @@
 <template>
   <div v-if="featured" class="flex flex-col items-center gap-3">
-    <p class="uppercase text-3xl font-bold tracking-[0.15em]">✦ Malaxaco Pick of the Day ✦</p>
+    <p class="uppercase text-3xl text-balance text-center font-bold tracking-[0.15em]">✦ Malaxaco Pick of the Day ✦</p>
 
     <div class="relative rounded-xl overflow-hidden w-full max-w-2xl" style="aspect-ratio: 16/9">
       <img :src="featured.bannerImage" class="w-full h-full object-cover opacity-55" />
