@@ -14,12 +14,11 @@
   </div>
 </template>
 
-<script setup>
-const { data: userData } = await useAsyncData("anilist", async () => {
-  return await useUserData("Film0re");
-});
+<script setup lang="ts">
+import { USER_QUERY, processUserData } from '~/queries/user'
+const { data: raw } = await useAsyncQuery(USER_QUERY, { userName: 'Film0re' })
 
-const user = computed(() => userData.value.user);
-const favoriteAnime = computed(() => userData.value.favoriteAnime);
-const currentlyWatching = computed(() => userData.value.currentlyWatching);
+const { user, favoriteAnime, currentlyWatching } = computed(
+  () => raw.value ? processUserData(raw.value) : { user: null, favoriteAnime: [], currentlyWatching: [] }
+).value
 </script>

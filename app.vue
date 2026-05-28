@@ -2,15 +2,14 @@
   <div class="flex flex-col center justify-center items-center">
     <Header></Header>
     <AboutMe imageUrl="/img/profile_picture.png">
-      Hello I am currently a full stack developer learning the ropes. In my offtime I enjoy working
-      with vue and playing counterstrike and league along with watching anime. :3</AboutMe
-    >
+      Just a chud with a dream
+    </AboutMe>
 
     <NuxtPage></NuxtPage>
     <Footer />
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
 useSeoMeta({
   ogImage: ".img/profile_picture.png",
 });
