@@ -37,7 +37,7 @@ export default cachedEventHandler(
     return Effect.runPromise(program)
   },
   {
-    maxAge: 60 * 60,
+    maxAge: 60 * 2,
     name: 'lochness-birds',
     getKey: (event) => {
       const query = getQuery(event)
