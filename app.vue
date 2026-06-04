@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col center justify-center items-center">
-    <Header></Header>
+    <Header />
     <AboutMe imageUrl="/img/profile_picture.png">
       Just a chud with a dream
     </AboutMe>
