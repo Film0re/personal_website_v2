@@ -1,21 +1,19 @@
 <script setup lang="ts">
 
-const back = ref(1);
+const back = ref(0); // 0 = today
 
 const { data, status, error, refresh } = await useFetch<BirdsResponse>(
   "/api/birds/lochness",
-  { query: { back } }, // reactive — refetches automatically when back changes
+  { query: { back } },
 );
 
-//TODO: Come back and fix timezones :-)
 const formattedDate = computed(() => {
   if (!data.value?.date) {
     return "";
   }
 
-  // Treat date-only strings as local midnight, not UTC midnight
   const [year, month, day] = data.value.date.split("-").map(Number);
-  const date = new Date(year, month - 1, day); // local time
+  const date = new Date(year, month - 1, day);
 
   return date.toLocaleDateString("en-GB", {
     weekday: "long",
@@ -25,16 +23,15 @@ const formattedDate = computed(() => {
   });
 });
 
-
-
 const birdEmojis = ["🐦", "🦆", "🦅", "🦉", "🦚", "🦜", "🐧", "🦢", "🕊️", "🦤"];
 const getBirdEmoji = (index: number) => birdEmojis[index % birdEmojis.length];
 
 const DAY_OPTIONS = [
+  { label: "Today", value: 0 },
   { label: "Yesterday", value: 1 },
   { label: "3 days ago", value: 3 },
   { label: "1 week ago", value: 7 },
-  { label: "2 weeks ago", value: 14 },
+  // { label: "2 weeks ago", value: 14 },
 ];
 </script>
 
@@ -71,23 +68,22 @@ const DAY_OPTIONS = [
         {{ formattedDate }}
       </p>
 
-      <!-- TODO: clean this up and figureo  -->
       <!-- Day picker -->
-      <!-- <div class="flex items-center justify-center gap-2 mt-5 flex-wrap"> -->
-      <!--   <button -->
-      <!--     v-for="opt in DAY_OPTIONS" -->
-      <!--     :key="opt.value" -->
-      <!--     class="font-mono text-xs tracking-wide px-3 py-1.5 rounded-sm border transition-all duration-150" -->
-      <!--     :class=" -->
-      <!--       back === opt.value -->
-      <!--         ? 'bg-stone-900 text-amber-400 border-stone-900' -->
-      <!--         : 'bg-transparent text-stone-500 border-stone-300 hover:border-stone-500 hover:text-stone-700' -->
-      <!--     " -->
-      <!--     @click="back = opt.value" -->
-      <!--   > -->
-      <!--     {{ opt.label }} -->
-      <!--   </button> -->
-      <!-- </div> -->
+      <div class="flex items-center justify-center gap-2 mt-5 flex-wrap">
+        <button
+          v-for="opt in DAY_OPTIONS"
+          :key="opt.value"
+          class="font-mono text-xs tracking-wide px-3 py-1.5 rounded-sm border transition-all duration-150"
+          :class="
+            back === opt.value
+              ? 'bg-stone-900 text-amber-400 border-stone-900'
+              : 'bg-transparent text-stone-500 border-stone-300 hover:border-stone-500 hover:text-stone-700'
+          "
+          @click="back = opt.value"
+        >
+          {{ opt.label }}
+        </button>
+      </div>
     </header>
 
     <!-- Loading -->
