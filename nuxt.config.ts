@@ -16,6 +16,10 @@ export default defineNuxtConfig({
     }
   },
 
+runtimeConfig: {
+    ebirdApiKey: process.env.EBIRD_API_KEY,
+  },
+
    apollo: {
     clients: {
       default: {
